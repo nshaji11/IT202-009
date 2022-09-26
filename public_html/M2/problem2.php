@@ -6,8 +6,14 @@ $a4 = [10.01, -12.22, 0.23, 19.20, -5.13, 3.12];
 function getTotal($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     $total = 0.00;
+    //nes22 9/25/22
     //TODO do adding here
+    foreach ($arr as $item){
+        $total = $total + $item;
+    }
+
     //TODO do rounding stuff here
+    $total = round($total,2);
     echo "The total is " . var_export($total, true);
 }
 echo "Problem 2: Adding Floats<br>";
