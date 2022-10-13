@@ -14,13 +14,59 @@
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
 
+
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
     </script>
     <style>
         /* TODO: make edits here */
-    </style>
+    
+    li{
+        text-decoration: none;
+        list-style-type: none;
+    }
+    nav{
+        overflow: hidden;
+        background-color: #33374d;
+    }
+    nav a {
+        background-color: lightblue;
+        text-decoration: none;
+        display: inline-block;
+        float: left; /*makes nav horizontal*/
+        list-style-type: none; /*makes nav horizontal*/
+        font-family: 'Times New Roman', monospace;
+        color: #7a78fa;
+        padding: 14px 16px;
+        transition: color 0.2s;
+    }
+
+    a:hover { /*when hovering over link, highlights*/
+        background-color: #7a78fa;
+        color: black;
+        text-decoration: underline;
+    }
+    nav a { /*changes to checkmark bullets*/
+        display: inline-block;
+        background: none;
+        list-style: none;
+        text-decoration: none;
+        list-style-type: checkmarks;
+    }
+
+    h1{
+        text-transform: capitalize;;
+    }
+    a{
+        text-transform: capitalize;;
+    }
+    li ul :before {
+        list-style-type: none;
+        content: '✓';
+        text-decoration: none;
+    }
+</style>
     <!-- make the necessary edits above this line -->
 
 
@@ -37,10 +83,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#login">login</a></li>
-            <li><a href="#register">register</a></li>
-            <li><a href="#profile">profile</a></li>
-            <li><a href="#logout">logout</a></li>
+            <li><a href="#" onclick="updateCurrentPage('login')">login</a></li>
+            <li><a href="#" onclick="updateCurrentPage('register')">register</a></li>
+            <li><a href="#" onclick="updateCurrentPage('profile')">profile</a></li>
+            <li><a href="#" onclick="updateCurrentPage('logout')">logout</a></li>
         </ul>
     </nav>
     <h1></h1>
