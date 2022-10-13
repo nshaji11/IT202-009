@@ -10,8 +10,8 @@ function processArray($arr) {
     //TODO add logic here to echo out only odd values if arrays%2 = 1 or not equal to 0, echo
     //nes22 9/25/2022
     for($item=0;$item<count($arr);$item++){
-        if($arr[$item]%2 != 0)
-        echo $arr[$item]."";
+        if($arr[$item]%2 != 0) //if the remainder is not 0, then the number is printed
+        echo $arr[$item].", ";
 
     }
     
