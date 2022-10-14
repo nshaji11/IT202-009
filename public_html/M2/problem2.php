@@ -9,11 +9,11 @@ function getTotal($arr) {
     //nes22 9/25/22
     //TODO do adding here
     foreach ($arr as $item){
-        $total = $total + $item;
+        $total = $total + $item; //adding each number to total
     }
 
     //TODO do rounding stuff here
-    $total = round($total,2);
+    $total = round($total,2); //rounds the value to max 2 decimal points 
     echo "The total is " . var_export($total, true);
 }
 echo "Problem 2: Adding Floats<br>";
