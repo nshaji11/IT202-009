@@ -10,9 +10,11 @@ function bePositive($arr) {
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
     //nes22 9/25/22
+    //https://www.w3schools.com/php/func_math_abs.asp
     for($item=0;$item<count($arr);$item++){
-        echo var_dump(abs($arr[$item])).", ";
-    }
+        echo var_dump(abs($arr[$item])).", "; //absolute value function changes negative numbers to positive
+    } //var_dump function shows the data type of the values
+
     
 }
 echo "Problem 3: Be Positive<br>";
