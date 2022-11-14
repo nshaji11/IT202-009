@@ -38,10 +38,15 @@ require_once(__DIR__ . "/../../partials/nav.php");
         $hasError = true;
      }
      //sanitize
-     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+     //$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+     $email = sanitize_email($email);
      //validate
-     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     /*if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email address";
+        $hasError = true;
+     }*/
+     if(!is_valid_email($email)){
+        echo "Please enter a valid email address <br>";
         $hasError = true;
      }
      if (empty($password)) {
@@ -53,7 +58,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
         $hasError = true;
      }
      if (strlen($password) < 8) {
-        echo "Password is too short";
+        echo "Password must be 8 characters or more";
         $hasError = true;
      }
      if (
