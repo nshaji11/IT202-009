@@ -30,7 +30,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
      //TODO 3:
      $hasError = false;
      if (empty($email)) {
-        echo "Email must not be empty";
+        flash("Email must not be empty");
         $hasError = true;
      }
      //sanitize
@@ -38,20 +38,20 @@ require_once(__DIR__ . "/../../partials/nav.php");
      $email = sanitize_email($email);
      //validate
      /*if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email address";
+        flash("Invalid email address");
         $hasError = true;
      }*/
      if(!is_valid_email($email)){
-        echo "Please enter a valid email address <br>";
+        flash("Please enter a valid email address <br>");
         $hasError = true;
      }
      if (empty($password)) {
-        echo "Password must not be empty";
+        flash("Password must not be empty");
         $hasError = true;
      }
      
      if (strlen($password) < 8) {
-        echo "Password is too short";
+        flash("Password is too short");
         $hasError = true;
      }
      
@@ -66,18 +66,18 @@ require_once(__DIR__ . "/../../partials/nav.php");
                     $hash = $user["password"];
                     unset($user["password"]);
                     if (password_verify($password, $hash)) {
-                        echo "Welcome $email";
+                        flash("Welcome $email");
                         $_SESSION["user"] = $user;
                         die(header("Location: home.php"));
                     } else {
-                        echo "Invalid password";
+                        flash("Invalid password");
                     }
                 } else {
-                    echo "Email not found";
+                    flash("Email not found");
                 }
             }
         } catch (Exception $e) {
-            echo "<pre>" . var_export($e, true) . "</pre>";
+            flash("<pre>" . var_export($e, true) . "</pre>");
         }
         
      }
@@ -85,3 +85,4 @@ require_once(__DIR__ . "/../../partials/nav.php");
 
  }
 ?>
+<?php require_once(__DIR__ . "/../../partials/flash.php");
