@@ -1,0 +1,48 @@
+.alert-success {
+    background-color: green
+}
+
+.alert-warning {
+    background-color: yellow;
+}
+
+.alert-danger {
+    background-color: red;
+}
+
+.alert-info {
+    background-color: teal;
+}
+nav{
+    overflow: hidden;
+    background-color: #33374d;
+}
+nav li{
+    display: inline; 
+    background-color: #33374d;
+    
+    
+}
+nav li a{color: rgb(127, 109, 227); text-decoration: none; padding: 14px 16px;}
+input:focus {
+    border: 3px solid rgb(74, 38, 234);
+    background-color: white;
+  }
+input {
+  background-color: #aa91dc;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+body{
+    background-color: rgb(199, 188, 222);
+    color: rgb(7, 1, 1);
+
+}
+a:hover { /*when hovering over link, highlights*/
+    background-color: #7a78fa;
+    color: black;
+    text-decoration: underline;
+}
