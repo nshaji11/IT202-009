@@ -4,8 +4,8 @@ require_once(__DIR__ . "/../../partials/nav.php");
 
 <form onsubmit="return validate(this)" method="POST">
     <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" required />
+        <label for="email">Email or Username</label>
+        <input type="text" name="email" required />
     </div>
     <div>
         <label for="pw">Password</label>
@@ -17,7 +17,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-
+        
         return true;
     }
 </script>
@@ -33,18 +33,22 @@ require_once(__DIR__ . "/../../partials/nav.php");
         flash("Email must not be empty");
         $hasError = true;
      }
-     //sanitize
-     //$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-     $email = sanitize_email($email);
-     //validate
-     /*if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        flash("Invalid email address");
-        $hasError = true;
-     }*/
-     if(!is_valid_email($email)){
-        flash("Please enter a valid email address <br>");
-        $hasError = true;
-     }
+     if (str_contains($email, "@")) {
+        //sanitize
+        
+        $email = sanitize_email($email);
+        //validate
+        
+        if (!is_valid_email($email)) {
+            flash("Invalid email address");
+            $hasError = true;
+        }
+    } else {
+        if (!is_valid_username($email)) {
+            flash("Invalid username");
+            $hasError = true;
+        }
+    }
      if (empty($password)) {
         flash("Password must not be empty");
         $hasError = true;
@@ -57,7 +61,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
      
      if (!$hasError) {
         $db = getDB();
-        $stmt = $db->prepare("SELECT id, email, username, password from Users where email = :email");
+        $stmt = $db->prepare("SELECT id, email, username, password from Users where email = :email or username=:email");
         try {
             $r = $stmt->execute([":email" => $email]);
             if ($r) {
