@@ -46,3 +46,7 @@ a:hover { /*when hovering over link, highlights*/
     color: black;
     text-decoration: underline;
 }
+.card-image{
+    height: 300px; 
+    width:auto; 
+ }

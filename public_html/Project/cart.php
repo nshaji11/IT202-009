@@ -64,6 +64,16 @@ if (!empty($action)) {
             }
             //TODO you do this part
             break;
+        case "clear":
+            $user_id = get_user_id();
+            $stmt=$db->prepare("DELETE FROM Cart WHERE user_id = :uid");
+            try{
+                $stmt->execute([":uid"=>$user_id]);
+                flash("Cart has been cleared", "success");
+            } catch (PDOException $e) {
+                error_log(var_export($e, true));
+                flash("Error clearing cart", "danger");
+            }
     }
 }
 $query = "SELECT cart.id, item.stock, item.name, cart.unit_price, (cart.unit_price * cart.desired_quantity) as subtotal, cart.desired_quantity
@@ -126,6 +136,11 @@ try {
                 <td colspan="100%">No items in cart</td>
             </tr>
         <?php endif; ?>
+        <form method = "POST">
+        <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
+        <input type="hidden" name="action" value="clear" />
+        <input class = "btn btn-primary" type="submit" value="Clear Cart" />
+        </form>
         <tr>
             <td colspan="100%">Total: $<?php se($total, null, 0); ?></td>
         </tr>
