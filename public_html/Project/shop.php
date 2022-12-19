@@ -175,7 +175,7 @@ try {
         <?php endforeach; ?>
             </div>
             <div class="mt-3">
-                <?php /* added pagination */ ?>
+                <?php /* addedd pagination */ ?>
                 <?php require(__DIR__ . "/../../partials/pagination.php"); ?>
             </div>
         </div>
