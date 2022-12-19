@@ -40,7 +40,14 @@ try {
                             <input type="hidden" name="action" value="add"/>
                             <input type="number" name="desired_quantity" value="1" min="1" max="<?php se($item, "stock");?>"/>
                             <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                            <?php if (has_role("Admin")) : ?>
+                            <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+                            <?php endif; ?>
+                            <a href="product_detail.php?item_id=<?php se($item, "id"); ?>">Details</a>
                         </form>
+                        
+                        
+                    
                     </div>
                 </div>
             </div>
