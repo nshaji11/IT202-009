@@ -8,7 +8,7 @@ if (!has_role("Admin")) {
 }
 //update the item
 if (isset($_POST["submit"])) {
-    if (update_data($TABLE_NAME, $_GET["id"], $_POST)) {
+    if (update_data($TABLE_NAME, isset($_GET["id"]), $_POST)) {
         flash("Updated item", "success");
     }
 }

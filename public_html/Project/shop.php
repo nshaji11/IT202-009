@@ -34,7 +34,7 @@ try {
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
                     </div>
                     <div class="card-footer">
-                        Cost: <?php se($item, "cost"); ?>
+                        Cost: $<?php se($item, "cost"); ?>
                         <form method="POST" action="cart.php">
                             <input type="hidden" name="item_id" value="<?php se($item, "id");?>"/>
                             <input type="hidden" name="action" value="add"/>
