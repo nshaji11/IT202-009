@@ -35,14 +35,33 @@ if (!empty($action)) {
                 $stmt->execute();
                 flash("Updated item quantity", "success");
             } catch (PDOException $e) {
+                $desired_quantity =se($_POST, "desired_quantity", "", false);
+                if($desired_quantity <=0)
+                {
+                $cart_id=se($_POST, "cart_id", "", false);
+                $stmt =$db->prepare("DELETE FROM Cart WHERE id =:item_id");
+                $stmt->execute([":item_id" => $cart_id]);
                 //TODO handle item removal when desired_quantity is <= 0
                 //TODO handle any other update related rules per your proposal
                 error_log(var_export($e, true));
-                flash("Error updating item quantity", "danger");
+                flash("Item removed", "success");
             }
+        }
             break;
         case "delete":
-            flash("Developer: You implement this logic", "warning");
+            
+            
+            $cart_id=se($_POST, "cart_id", "", false);
+            $stmt =$db->prepare("DELETE FROM Cart WHERE id =:item_id");
+
+            try{
+                $stmt->execute([":item_id" => $cart_id]);
+                flash("Item deleted", "success");
+            
+            }catch(PDOException $e){
+                error_log(var_export($e, true));
+                flash("Error deleting item", "danger");
+            }
             //TODO you do this part
             break;
     }
@@ -87,7 +106,7 @@ try {
                     <form method="POST">
                         <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
                         <input type="hidden" name="action" value="update" />
-                        <input type="number" name="desired_quantity" value="<?php se($c, "desired_quantity"); ?>" min="1" max="<?php se($c, "stock"); ?>" />
+                        <input type="number" name="desired_quantity" value="<?php se($c, "desired_quantity"); ?>" min="0" max="<?php se($c, "stock"); ?>" />
                         <input type="submit" class="btn btn-primary" value="Update Quantity" />
                     </form>
                 </td>
@@ -108,7 +127,7 @@ try {
             </tr>
         <?php endif; ?>
         <tr>
-            <td colspan="100%">Total: <?php se($total, null, 0); ?></td>
+            <td colspan="100%">Total: $<?php se($total, null, 0); ?></td>
         </tr>
         </tbody>
     </table>
