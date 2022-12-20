@@ -69,7 +69,7 @@ foreach ($params as $key => $value) {
 $params = null; //set it to null to avoid issues
 
 
-$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM Products WHERE stock > 0 LIMIT 50");
+$stmt = $db->prepare("SELECT id, name, description, cost, stock, image, visibility FROM Products WHERE stock > 0 LIMIT 50");
 try {
     $stmt->execute();
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -164,6 +164,7 @@ try {
                             <input type="submit" class="btn btn-primary" value="Add to Cart"/>
                             <?php if (has_role("Admin")) : ?>
                             <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+
                             <?php endif; ?>
                             <a href="product_detail.php?item_id=<?php se($item, "id"); ?>">Details</a>
                         </form>
