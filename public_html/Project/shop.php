@@ -69,7 +69,7 @@ foreach ($params as $key => $value) {
 $params = null; //set it to null to avoid issues
 
 
-$stmt = $db->prepare("SELECT id, name, description, cost, stock, image, visibility FROM Products WHERE stock > 0 LIMIT 50");
+/*$stmt = $db->prepare("SELECT id, name, description, cost, stock, image, visibility FROM Products WHERE stock > 0 LIMIT 50");
 try {
     $stmt->execute();
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,8 +79,8 @@ try {
 } catch (PDOException $e) {
     error_log(var_export($e, true));
     flash("Error fetching items", "danger");
-}
-/*try {
+}*/
+try {
     $stmt->execute($params); //dynamically populated params to bind
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
@@ -89,7 +89,7 @@ try {
 } catch (PDOException $e) {
     error_log(var_export($e, true));
     flash("Error fetching items", "danger");
-}*/
+}
 ?>
 
 
