@@ -4,6 +4,7 @@ require(__DIR__ . "/../../partials/nav.php");
 $results = [];
 $db = getDB();
 //process filters/sorting
+//nes22 12/5
 //Sort and Filters
 $col = se($_GET, "col", "cost", false);
 //allowed list
@@ -19,8 +20,8 @@ if (!in_array($order, ["asc", "desc"])) {
 $name = se($_GET, "name", "", false);
 
 //split query into data and total
-$base_query = "SELECT id, name, description, cost, stock, image FROM RM_Items items";
-$total_query = "SELECT count(1) as total FROM RM_Items items";
+$base_query = "SELECT id, name, description, cost, stock, image FROM Products items";
+$total_query = "SELECT count(1) as total FROM Products items";
 //dynamic query
 $query = " WHERE 1=1 and stock > 0"; //1=1 shortcut to conditionally build AND clauses
 $params = []; //define default params, add keys as needed and pass to execute
