@@ -141,12 +141,24 @@ try {
         <input type="hidden" name="action" value="clear" />
         <input class = "btn btn-primary" type="submit" value="Clear Cart" />
         </form>
+        
         <tr>
             <td colspan="100%">Total: $<?php se($total, null, 0); ?></td>
         </tr>
+        
         </tbody>
+        
     </table>
+    <form method = "POST" action="checkout_page.php">
+        <input type="hidden" name="total_cost" value="<?php echo($total)?>" />
+        <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
+        <input type="hidden" name="action" value="checkout" />
+        <input class = "btn btn-success" type="submit" value="Checkout"  />
+        
+        </form>
+
 </div>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
+<!-- reference: https://www.w3schools.com/howto/howto_css_checkout_form.asp -->
