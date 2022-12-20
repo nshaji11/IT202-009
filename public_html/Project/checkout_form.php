@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,6 +97,27 @@ span.price {
 </style>
 </head>
 <body>
+<?php
+require(__DIR__ . "/../../partials/nav.php");
+
+is_logged_in(true);
+$query = "SELECT cart.id, item.stock, item.name, cart.unit_price, (cart.unit_price * cart.desired_quantity) as subtotal, cart.desired_quantity
+FROM Products as item JOIN Cart as cart on item.id = cart.item_id
+ WHERE cart.user_id = :uid";
+$db = getDB();
+$stmt = $db->prepare($query);
+$cart = [];
+try {
+    $stmt->execute([":uid" => get_user_id()]);
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($results) {
+        $cart = $results;
+    }
+} catch (PDOException $e) {
+    error_log(var_export($e, true));
+    flash("Error fetching cart", "danger");
+}
+?>
 
 <h2>Shop Checkout Form</h2>
 
@@ -106,8 +130,10 @@ span.price {
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <label for="fname"><i class="fa fa-user"></i> First Name</label>
             <input type="text" id="fname" name="firstname">
+            <label for="lname"><i class="fa fa-user"></i> Last Name</label>
+            <input type="text" id="lname" name="lastname">
             
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" >
@@ -126,7 +152,16 @@ span.price {
           </div>
           <div class="col-50">
             <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
+            <?php $total = 0; ?>
+            <?php foreach ($cart as $c) : ?>
+            <tr>
+                
+                <?php $total += (int)se($c, "subtotal", 0, false); ?>
+                
+                
+            </tr>
+        <?php endforeach; ?>
+            <label >Accepted Cards</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -135,10 +170,11 @@ span.price {
             </div>
             <label for="cname">Card</label>
             <input type="text" id="cname" name="cardname" >
-            <label for="ccnum">Card Number</label>
+            <label for="ccnum">Amount</label>
             <input type="text" id="ccnum" name="cardnumber" >
             <label for="ccnum">Cost</label>
-            <input type="text" id="cost" name="total_cost" >
+          
+            <input type="text" name="total_cost" id="cost" value="<?php se($total, null, 0); ?>" />
             
             <div class="row">
               <div class="col-50">
@@ -154,23 +190,14 @@ span.price {
         
         <form method = "POST" action="cart.php">
         <!--<input type="submit" onclick="location.href='ty.php';"value="Place Order" class="btn"> -->
-        <input type="submit" value="Return to Cart" class="btn">
+        <input type="submit" value="Return to Cart" class="btn btn-primary">
         
        
           
       </form>
     </div>
   </div>
-  <div class="col-25">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
-      
-      <p><a href="cart.php?id=<?php se($total, null, 0); ?>">Total</a></p>
-
-      
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>$57</b></span></p>
-    </div>
+  
   </div>
 </div>
 </body>
