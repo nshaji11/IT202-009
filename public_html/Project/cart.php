@@ -149,13 +149,16 @@ try {
         </tbody>
         
     </table>
-    <form method = "POST">
+    <form method = "POST" action="checkout_page.php">
+        <input type="hidden" name="total_cost" value="<?php echo($total)?>" />
         <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
         <input type="hidden" name="action" value="checkout" />
         <input class = "btn btn-success" type="submit" value="Checkout"  />
         
         </form>
+
 </div>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
+<!-- reference: https://www.w3schools.com/howto/howto_css_checkout_form.asp -->
