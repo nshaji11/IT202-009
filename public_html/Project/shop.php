@@ -20,7 +20,7 @@ if (!in_array($order, ["asc", "desc"])) {
 $name = se($_GET, "name", "", false);
 
 //split query into data and total
-$base_query = "SELECT id, name, description, cost, stock, image FROM Products items";
+$base_query = "SELECT id, name, visibility, description, cost, stock, image FROM Products items";
 $total_query = "SELECT count(1) as total FROM Products items";
 //dynamic query
 $query = " WHERE 1=1 and stock > 0"; //1=1 shortcut to conditionally build AND clauses
@@ -142,11 +142,22 @@ try {
     <!-- end form -->
     <div class="row row-cols-sm-2 row-cols-xs-1 row-cols-md-3 row-cols-lg-6 g-4">
         <?php foreach ($results as $item) : ?>
+            <?php if(!has_role("Admin")) : ?>
+                <?php if($item["visibility"]==0) : ?>
+                    <?php continue; ?>
+                    <?php endif;?>
+                    <?php endif;?>
+
             <div class="col">
                 <div class="card bg-light">
                     <div class="card-header">
-                        Candy
+                        Food
                     </div>
+                    <?php if (has_role("Admin")) : ?>
+                        <?php if($item["visibility"]==0) : ?>
+                            Not Visible
+                            <?php endif;?>
+                    <?php endif; ?>
                     <?php if (se($item, "image", "", false)) : ?>
                         <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
                     <?php endif; ?>
