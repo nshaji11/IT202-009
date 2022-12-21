@@ -20,7 +20,7 @@ if (!in_array($order, ["asc", "desc"])) {
 $name = se($_GET, "name", "", false);
 
 //split query into data and total
-$base_query = "SELECT id, name, description, cost, stock, image FROM Products items";
+$base_query = "SELECT id, name, visibility, description, cost, stock, image FROM Products items";
 $total_query = "SELECT count(1) as total FROM Products items";
 //dynamic query
 $query = " WHERE 1=1 and stock > 0"; //1=1 shortcut to conditionally build AND clauses
@@ -69,7 +69,7 @@ foreach ($params as $key => $value) {
 $params = null; //set it to null to avoid issues
 
 
-$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM Products WHERE stock > 0 LIMIT 50");
+/*$stmt = $db->prepare("SELECT id, name, description, cost, stock, image, visibility FROM Products WHERE stock > 0 LIMIT 50");
 try {
     $stmt->execute();
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,8 +79,8 @@ try {
 } catch (PDOException $e) {
     error_log(var_export($e, true));
     flash("Error fetching items", "danger");
-}
-/*try {
+}*/
+try {
     $stmt->execute($params); //dynamically populated params to bind
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
@@ -89,9 +89,22 @@ try {
 } catch (PDOException $e) {
     error_log(var_export($e, true));
     flash("Error fetching items", "danger");
-}*/
+}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+    background-color: rgb(199, 188, 222);
+    
 
+}
+
+</style>
+</head>
 
 <div class="container-fluid">
     <h1>Shop</h1>
@@ -142,11 +155,22 @@ try {
     <!-- end form -->
     <div class="row row-cols-sm-2 row-cols-xs-1 row-cols-md-3 row-cols-lg-6 g-4">
         <?php foreach ($results as $item) : ?>
+            <?php if(!has_role("Admin")) : ?>
+                <?php if($item["visibility"]==0) : ?>
+                    <?php continue; ?>
+                    <?php endif;?>
+                    <?php endif;?>
+
             <div class="col">
                 <div class="card bg-light">
                     <div class="card-header">
-                        Candy
+                        Food
                     </div>
+                    <?php if (has_role("Admin")) : ?>
+                        <?php if($item["visibility"]==0) : ?>
+                            Not Visible
+                            <?php endif;?>
+                    <?php endif; ?>
                     <?php if (se($item, "image", "", false)) : ?>
                         <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
                     <?php endif; ?>
@@ -164,6 +188,7 @@ try {
                             <input type="submit" class="btn btn-primary" value="Add to Cart"/>
                             <?php if (has_role("Admin")) : ?>
                             <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+
                             <?php endif; ?>
                             <a href="product_detail.php?item_id=<?php se($item, "id"); ?>">Details</a>
                         </form>
