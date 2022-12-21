@@ -64,11 +64,12 @@ if (empty($last)) {
   $hasError = true;
 }
   if (
-    strlen($cost) > 0 && $money !== $confirm
+    strlen($cost) > 0 && $money !== $cost
 ) {
     flash("Please pay the correct amount", "danger");
     $hasError = true;
 }
+nes22 12/20
 }
 */
 ?>
