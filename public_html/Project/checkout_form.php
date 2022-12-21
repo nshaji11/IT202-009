@@ -37,7 +37,40 @@ $columns = get_columns($TABLE_NAME);
 $ignore = ["id", "user_id", "total_price", "modified", "created"];
 
 
-
+/*nes22 12/20/2022
+if (isset($_POST["address"]) && isset($_POST["payment_method"]) && isset($_POST["cost"]) && isset($_POST["money_received"])&& isset($_POST["first_name"])&& isset($_POST["last_name"])) {
+  $address = se($_POST, "address", "", false);
+  $card = se($_POST, "payment_method", "", false);
+  $cost = se($_POST, "cost", "", false);
+  $money = se($_POST, "money_received", "", false);
+  $first = se($_POST, "first_name", "", false);
+  $last = se($_POST, "last_name", "", false);
+  //TODO 3
+  $hasError = false;
+  if (empty($address)) {
+      flash("Address must not be empty", "danger");
+      $hasError = true;
+  }
+  if (empty($card)) {
+    flash("Payment type must not be empty", "danger");
+    $hasError = true;
+}
+if (empty($first)) {
+  flash("Please enter your first name", "danger");
+  $hasError = true;
+}
+if (empty($last)) {
+  flash("Please enter your last name", "danger");
+  $hasError = true;
+}
+  if (
+    strlen($cost) > 0 && $money !== $confirm
+) {
+    flash("Please pay the correct amount", "danger");
+    $hasError = true;
+}
+}
+*/
 ?>
 
 <!DOCTYPE html>
