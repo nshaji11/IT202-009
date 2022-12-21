@@ -62,8 +62,19 @@
   -  [x] \(mm/dd/yyyy of completion) Show user-friendly success messages for applicable actions
         -  Link to related .md file: [Link Name](link url)
   - (add link to milestone2.md from milestone2 branch)
+
 - Milestone 3
-  - (duplicate template here for Milestone 1 features)
+  -  [x] \(mm/dd/yyyy of completion) Cart page will have a button(link) to place order
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) Orders will be able to be recorded
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) Checkout Page
+        -  Link to related .md file: [Link Name](link url)
+  -  [ ] \(mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
+        -  Link to related .md file: [Link Name](link url)
+  -  [ ] \(mm/dd/yyyy of completion) Order Confirmation Page
+        -  Link to related .md file: [Link Name](link url)
+  -  [ ] \(mm/dd/yyyy of completion) User will be able to see their Purchase History
   - (add link to milestone3.md from milestone3 branch)
 - Milestone 4
   - (duplicate template here for Milestone 1 features)
