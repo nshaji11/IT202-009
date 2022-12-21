@@ -76,7 +76,7 @@ try {
         </form>
         <form method = "POST" action="cart.php">
         
-        <input class = "btn btn-success" type="submit" value="Return to Cart"  />
+        <input class = "btn btn-primary" type="submit" value="Return to Cart"  />
         
         </form>
 </div>
