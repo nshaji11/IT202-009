@@ -14,6 +14,7 @@ try {
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($results) {
         $cart = $results;
+        
     }
 } catch (PDOException $e) {
     error_log(var_export($e, true));
@@ -141,7 +142,7 @@ span.price {
     <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
-      <table class="table ">
+      <table class="table table-striped">
         <?php $total = 0; ?>
         <thead>
             <tr>
@@ -201,6 +202,7 @@ span.price {
                 
             </tr>
         <?php endforeach; ?>
+    
         <?php foreach ($columns as $index => $column) : ?>
             <?php /* Lazily ignoring fields via hardcoded array*/ ?>
             <?php if (!in_array($column["Field"], $ignore)) : ?>
@@ -211,6 +213,11 @@ span.price {
                   </div>
             <?php endif; ?>
         <?php endforeach; ?>
+        </form>
+        <form method = "POST" action="order_confirmation.php">
+        <input class="btn btn-primary" type="submit" value="Place Order"  />
+        
+        </form>
         <!--
             <div class="mb-4">
             <label class="form-label" for="first_name">First Name</label>
@@ -242,23 +249,7 @@ span.price {
             <input class="form-control" type="text" name="money_received" required maxlength="5" />
             </div>
             -->
-        
-        <input class="btn btn-primary" type="submit" value="Place Order" name="submit" />
-        
-        <!--<form method = "POST" action="cart.php">
-        <input type="submit" onclick="location.href='ty.php';"value="Place Order" class="btn"> 
-        <input type="submit" value="Return to Cart" class="btn btn-primary">-->
-       
-          
-      
-    </form>
-    
 </div>
-           
-
-
-
-
-
-
-
+<?php
+require(__DIR__ . "/../../partials/flash.php");
+?>

@@ -63,7 +63,7 @@ session_start();
                         <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="rolesDropdown">
+                        <ul class="dropdown-menu bg-info" aria-labelledby="rolesDropdown">
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/add_item.php'); ?>">Create</a></li>
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/list_items.php'); ?>">List</a></li>
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/edit_item.php'); ?>">Edit Items</a></li>
