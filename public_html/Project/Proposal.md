@@ -37,7 +37,30 @@
         -  Link to related .md file: [Link Name](link url)
 
 - Milestone 2
-  - (duplicate template here for Milestone 1 features)
+  -  [x] \(mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
+        -  Link to related .md file: [Link Name](link url) 
+  -  [x] \(mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
+        -  Link to related .md file: [Link Name](link url)
+  -  [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
+        -  Link to related .md file: [Link Name](link url)
+  -  [ ] \(mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) User will be able to add items to Cart
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) User will be able to see their cart
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) User will be able to remove a single item from their cart via button click
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) Show user-friendly error messages for applicable actions
+        -  Link to related .md file: [Link Name](link url)
+  -  [x] \(mm/dd/yyyy of completion) Show user-friendly success messages for applicable actions
+        -  Link to related .md file: [Link Name](link url)
   - (add link to milestone2.md from milestone2 branch)
 - Milestone 3
   - (duplicate template here for Milestone 1 features)
