@@ -142,7 +142,7 @@ span.price {
     <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
-      <table class="table ">
+      <table class="table table-striped">
         <?php $total = 0; ?>
         <thead>
             <tr>
@@ -249,19 +249,7 @@ span.price {
             <input class="form-control" type="text" name="money_received" required maxlength="5" />
             </div>
             -->
-        
-        
-    
-    
 </div>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
-           
-
-
-
-
-
-
-
