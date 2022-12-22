@@ -4,7 +4,7 @@ require(__DIR__ . "/../../../partials/nav.php");
 
 is_logged_in(true);
 $db =getDB();
-$result = [];
+$results = [];
 
 $col = se($_GET, "col", "created", false);
 if(!in_array($col, ["total_price", "created", "payment"])) {
@@ -52,7 +52,7 @@ try {
     $stmt->execute($params);
     $r =$stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
-        $result = $r;
+        $results = $r;
     }
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre");
@@ -114,7 +114,7 @@ try {
             <th>More Details</th>
 
         </thead>
-        <?php foreach ($result as $item) : ?>
+        <?php foreach ($results as $item) : ?>
             <tbody>
                 <td><?php se($item, "total_price"); ?></td>
                 <td><?php se($item, "payment"); ?></td>

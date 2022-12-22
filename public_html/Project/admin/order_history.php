@@ -59,6 +59,26 @@ try {
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+  color: rgb(29, 143, 100);
+  
+}
+body{
+    background-color: rgb(199, 188, 222);
+    
+
+}
+</style>
+</head>
+
 <form class = "row row-cols-auto g-3 align-items-center">
     <div class="col">
         <div class="input-group">
@@ -129,7 +149,7 @@ try {
                 </td>
             </tbody>
             <?php endforeach; ?>
-            <h2> Total Revenue for All Orders: $<?php echo($totalValue);?></h2>
+            <h3> Total Revenue for All Orders: $<?php echo($totalValue);?></h3>
             
     </table>
     

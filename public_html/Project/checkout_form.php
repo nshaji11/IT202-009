@@ -250,7 +250,7 @@ span.price {
         <?php endforeach; ?>
         </form>
         <form method = "POST" action="order_confirmation.php">
-        <input class="btn btn-primary" type="submit" value="Place Order"  />
+        <input class="btn btn-primary" type="submit" value="Place Order"/>
         
         </form>
         <!--
