@@ -20,7 +20,7 @@ if (!in_array($order, ["asc", "desc"])) {
 $name = se($_GET, "name", "", false);
 
 //split query into data and total
-$base_query = "SELECT id, name, visibility, description, cost, stock, image FROM Products items";
+$base_query = "SELECT id, name, visibility, description, cost, rating, stock, image FROM Products items";
 $total_query = "SELECT count(1) as total FROM Products items";
 //dynamic query
 $query = " WHERE 1=1 and stock > 0"; //1=1 shortcut to conditionally build AND clauses
@@ -178,6 +178,7 @@ body{
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
+                        <p class="card-text">Average Rating: <?php se($item, "rating"); ?></p>
                     </div>
                     <div class="card-footer">
                         Cost: $<?php se($item, "cost"); ?>
