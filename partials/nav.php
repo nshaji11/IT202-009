@@ -70,6 +70,7 @@ session_start();
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/edit_item.php'); ?>">Edit Items</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/order_history.php'); ?>">Admin Order History</a></li>
                 <?php endif; ?>
                 <?php if (is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
