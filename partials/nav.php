@@ -42,6 +42,7 @@ session_start();
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('cart.php'); ?>">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('purchase_history.php'); ?>">Order History</a></li>
                 <?php endif; ?>
                 <?php if (!is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('login.php'); ?>">Login</a></li>
@@ -69,6 +70,7 @@ session_start();
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/edit_item.php'); ?>">Edit Items</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/order_history.php'); ?>">Admin Order History</a></li>
                 <?php endif; ?>
                 <?php if (is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>

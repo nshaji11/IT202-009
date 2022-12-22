@@ -121,18 +121,11 @@ body{
                 
                 
         <?php endforeach; ?>
-        <form method = "POST" action="shop.php">
-        <input type="hidden" name="total_cost" value="<?php echo($total)?>" />
-        <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
-        <input type="hidden" name="action" value="checkout" />
-        <input class = "btn btn-success" type="submit" value="Return to Shop"  />
         
-        </form>
+        
+        
         </tr>
         </div>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
-
-        
-        
