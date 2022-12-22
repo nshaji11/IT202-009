@@ -65,7 +65,8 @@ body{
                     <form method="POST">
                         <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
                         <input type="hidden" name="action" value="delete" />
-                        
+                         
+                        <a href="order_info.php?item_id=<?php se($item, "id"); ?>">Details</a>
                     </form>
                 </td>
             </tr>
