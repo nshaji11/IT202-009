@@ -129,7 +129,7 @@ try {
                 </td>
             </tbody>
             <?php endforeach; ?>
-            <h2> Total Revenue for All Orders: $<?php echo($totalValue);?></h2>
+            
             
     </table>
     

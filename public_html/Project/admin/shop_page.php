@@ -187,7 +187,7 @@ body{
                         <form method="POST" action="cart.php">
                             
                             <?php if (has_role("Admin")) : ?>
-                            <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+                            <a href="edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
 
                             <?php endif; ?>
                             <a href="product_detail.php?item_id=<?php se($item, "id"); ?>">Details</a>
