@@ -1,8 +1,9 @@
 # Project Name: Simple Shop
-## Project Summary: (Copy from proposal)
+## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: [https://github.com/nshaji11/IT202-009/tree/prod/public_html/Project]
 ## Project Board Link: 
 ## Website Link: https://nes22-prod1.herokuapp.com/Project
+## Youtube Link: https://youtu.be/rLULk6NSDjo
 ## Your Name: Nikita Shaji
 
 
@@ -64,17 +65,17 @@
   - (add link to milestone2.md from milestone2 branch)
 
 - Milestone 3
-  -  [x] \(mm/dd/yyyy of completion) Cart page will have a button(link) to place order
+  -  [x] \(12/20/2022 of completion) Cart page will have a button(link) to place order
         -  Link to related .md file: [Link Name](link url)
-  -  [x] \(mm/dd/yyyy of completion) Orders will be able to be recorded
+  -  [x] \(12/20/2022 of completion) Orders will be able to be recorded
         -  Link to related .md file: [Link Name](link url)
-  -  [x] \(mm/dd/yyyy of completion) Checkout Page
+  -  [x] \(12/20/2022 of completion) Checkout Page
         -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
+  -  [ ] \(12/20/2022 of completion) Store Owner will be able to see all Purchase History
         -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) Order Confirmation Page
+  -  [ ] \(12/20/2022 of completion) Order Confirmation Page
         -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) User will be able to see their Purchase History
+  -  [ ] \(12/12/2022 of completion) User will be able to see their Purchase History
   - (add link to milestone3.md from milestone3 branch)
 - Milestone 4
   - (duplicate template here for Milestone 1 features)
