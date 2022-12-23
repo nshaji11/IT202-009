@@ -1,5 +1,7 @@
 <?php
-require(__DIR__ . "/../../partials/nav.php");
+//note we need to go up 1 more directory
+require(__DIR__ . "/../../../partials/nav.php");
+
 
 $results = [];
 $db = getDB();
@@ -178,17 +180,14 @@ body{
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
-                        <p class="card-text">Average Rating: <?php se($item, "rating"); ?></p>
+                        
                     </div>
                     <div class="card-footer">
                         Cost: $<?php se($item, "cost"); ?>
                         <form method="POST" action="cart.php">
-                            <input type="hidden" name="item_id" value="<?php se($item, "id");?>"/>
-                            <input type="hidden" name="action" value="add"/>
-                            <input type="number" name="desired_quantity" value="1" min="1" max="<?php se($item, "stock");?>"/>
-                            <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                            
                             <?php if (has_role("Admin")) : ?>
-                            <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+                            <a href="edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
 
                             <?php endif; ?>
                             <a href="product_detail.php?item_id=<?php se($item, "id"); ?>">Details</a>
@@ -203,7 +202,7 @@ body{
             </div>
             <div class="mt-3">
                 <?php /* addedd pagination */ ?>
-                <?php require(__DIR__ . "/../../partials/pagination.php"); ?>
+                 <?php require(__DIR__ . "/../../../partials/pagination.php"); ?> 
             </div>
         </div>
         <div class="col-4" style="min-width:30em">
@@ -213,5 +212,6 @@ body{
 </div>
 
 <?php
-require(__DIR__ . "/../../partials/flash.php");
+//note we need to go up 1 more directory
+require_once(__DIR__ . "/../../../partials/flash.php");
 ?>

@@ -1,5 +1,7 @@
 <?php
-require(__DIR__ . "/../../partials/nav.php");
+//note we need to go up 1 more directory
+require(__DIR__ . "/../../../partials/nav.php");
+
 
 is_logged_in(true);
 $db = getDB();
@@ -121,18 +123,12 @@ body{
                 
                 
         <?php endforeach; ?>
-        <form method = "POST" action="shop.php">
-        <input type="hidden" name="total_cost" value="<?php echo($total)?>" />
-        <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
-        <input type="hidden" name="action" value="checkout" />
-        <input class = "btn btn-success" type="submit" value="Return to Shop"  />
         
-        </form>
+        
+        
         </tr>
         </div>
-<?php
-require(__DIR__ . "/../../partials/flash.php");
+        <?php
+//note we need to go up 1 more directory
+require_once(__DIR__ . "/../../../partials/flash.php");
 ?>
-
-        
-        
