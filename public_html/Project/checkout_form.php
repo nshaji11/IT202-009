@@ -37,7 +37,7 @@ $columns = get_columns($TABLE_NAME);
 $ignore = ["id", "user_id", "total_price", "modified", "created"];
 
 
-/*nes22 12/20/2022
+//nes22 12/20/2022
 if (isset($_POST["address"]) && isset($_POST["payment_method"]) && isset($_POST["cost"]) && isset($_POST["money_received"])&& isset($_POST["first_name"])&& isset($_POST["last_name"])) {
   $address = se($_POST, "address", "", false);
   $card = se($_POST, "payment_method", "", false);
@@ -51,7 +51,8 @@ if (isset($_POST["address"]) && isset($_POST["payment_method"]) && isset($_POST[
       flash("Address must not be empty", "danger");
       $hasError = true;
   }
-  if (empty($card)) {
+}
+  /*if (empty($card)) {
     flash("Payment type must not be empty", "danger");
     $hasError = true;
 }
@@ -249,7 +250,7 @@ span.price {
         <?php endforeach; ?>
         </form>
         <form method = "POST" action="order_confirmation.php">
-        <input class="btn btn-primary" type="submit" value="Place Order"  />
+        <input class="btn btn-primary" type="submit" value="Place Order"/>
         
         </form>
         <!--

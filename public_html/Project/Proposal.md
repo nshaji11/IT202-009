@@ -1,8 +1,9 @@
 # Project Name: Simple Shop
-## Project Summary: (Copy from proposal)
+## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: [https://github.com/nshaji11/IT202-009/tree/prod/public_html/Project]
-## Project Board Link: 
+## Project Board Link: https://github.com/users/nshaji11/projects/1
 ## Website Link: https://nes22-prod1.herokuapp.com/Project
+## Youtube Link: https://youtu.be/xAwGYWhn3lI
 ## Your Name: Nikita Shaji
 
 
@@ -18,68 +19,86 @@
 
 - Milestone 1
   -  [x] \(11/13/2022 of completion) User will be able to register a new account
-        -  Link to related .md file: [Link Name](link url) 
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) User will be able to login to their account (given they enter the correct credentials)
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) User will be able to logout
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) Basic security rules implemented
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/17/2022 of completion) Basic Roles implemented
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) Site should have basic styles/theme applied; everything should be styled
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) Any output messages/errors should be “user friendly”
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) User will be able to see their profile
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
   -  [x] \(11/13/2022 of completion) User will be able to edit their profile
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone1.md
+        https://github.com/nshaji11/IT202-009/blob/Milestone1/public_html/Project/milestone1.md
 
 - Milestone 2
   -  [x] \(mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
-        -  Link to related .md file: [Link Name](link url) 
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
   -  [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
   -  [x] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [ ] \(mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) User will be able to add items to Cart
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) User will be able to see their cart
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) User will be able to remove a single item from their cart via button click
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) Show user-friendly error messages for applicable actions
-        -  Link to related .md file: [Link Name](link url)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
   -  [x] \(mm/dd/yyyy of completion) Show user-friendly success messages for applicable actions
-        -  Link to related .md file: [Link Name](link url)
-  - (add link to milestone2.md from milestone2 branch)
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone2.md
+  - (add link to milestone2.md from milestone2 branch) https://github.com/nshaji11/IT202-009/blob/Milestone2/public_html/Project/milestone2.md
 
 - Milestone 3
-  -  [x] \(mm/dd/yyyy of completion) Cart page will have a button(link) to place order
-        -  Link to related .md file: [Link Name](link url)
-  -  [x] \(mm/dd/yyyy of completion) Orders will be able to be recorded
-        -  Link to related .md file: [Link Name](link url)
-  -  [x] \(mm/dd/yyyy of completion) Checkout Page
-        -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
-        -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) Order Confirmation Page
-        -  Link to related .md file: [Link Name](link url)
-  -  [ ] \(mm/dd/yyyy of completion) User will be able to see their Purchase History
-  - (add link to milestone3.md from milestone3 branch)
+  -  [x] \(12/20/2022 of completion) Cart page will have a button(link) to place order
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
+  -  [x] \(12/20/2022 of completion) Orders will be able to be recorded
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
+  -  [x] \(12/20/2022 of completion) Checkout Page
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
+  -  [ ] \(12/20/2022 of completion) Store Owner will be able to see all Purchase History
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
+  -  [ ] \(12/20/2022 of completion) Order Confirmation Page
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone3.md
+  -  [ ] \(12/21/2022 of completion) User will be able to see their Purchase History
+  - (add link to milestone3.md from milestone3 branch) https://github.com/nshaji11/IT202-009/blob/Milestone3/public_html/Project/milestone3.md
 - Milestone 4
-  - (duplicate template here for Milestone 1 features)
-  - 
-### Intructions
+  -  [x] \(12/22/2022 of completion) User can set their profile to be public or private
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [x] \(12/22/2022 of completion) User will be able to rate a product they purchased
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [ ] \(12/22/2022 of completion) User’s Purchase History Changes
+
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [ ] \(12/22/2022 of completion) Store Owner Purchase History Changes
+
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [x] \(12/22/2022 of completion) Add pagination to Shop Page
+        -  Link to related .md file: https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [ ] \(12/22/2022 of completion) Store Owner will be able to see all products out of stock
+
+        https://github.com/nshaji11/IT202-009/blob/prod/public_html/Project/milestone4.md
+  -  [ ] \(12/22/2022 of completion) User can sort products by average rating on the Shop Page
+        - https://github.com/nshaji11/IT202-009/blob/Milestone4/public_html/Project/milestone4.md
+
+
+
 #### Don't delete this
 1. Pick one project type
 2. Create a proposal.md file in the root of your project directory of your GitHub repository

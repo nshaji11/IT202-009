@@ -1,10 +1,10 @@
 <?php
 //note we need to go up 1 more directory
-require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__ . "/../../../partials/nav.php");
 
 is_logged_in(true);
 $db =getDB();
-$results = [];
+$result = [];
 
 $col = se($_GET, "col", "created", false);
 if(!in_array($col, ["total_price", "created", "payment"])) {
@@ -52,12 +52,32 @@ try {
     $stmt->execute($params);
     $r =$stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
-        $results = $r;
+        $result = $r;
     }
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre");
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+  color: rgb(29, 143, 100);
+  
+}
+body{
+    background-color: rgb(199, 188, 222);
+    
+
+}
+</style>
+</head>
 
 <form class = "row row-cols-auto g-3 align-items-center">
     <div class="col">
@@ -114,7 +134,7 @@ try {
             <th>More Details</th>
 
         </thead>
-        <?php foreach ($results as $item) : ?>
+        <?php foreach ($result as $item) : ?>
             <tbody>
                 <td><?php se($item, "total_price"); ?></td>
                 <td><?php se($item, "payment"); ?></td>
@@ -122,18 +142,22 @@ try {
                 <td><?php se($item, "address"); ?></td>
                 <?php $totalValue = $totalValue + intval(se($item, "total_price", "", false));?>
                 <td>
-                    <form method ="POST" action="order_info.php">
-                        <input class="btn btn-primary" type="submit" value="More Info" name="OrderInfo"/>
+                    <form method ="POST" action="order_info_admin.php">
+                        <input class="btn btn-primary" type="submit" value="More Info" name="OrderInfoAdmin"/>
                         <input type= "hidden" name="order_id" value="<?php se($item, "id"); ?>"/>
                     </form>
                 </td>
             </tbody>
             <?php endforeach; ?>
-            
+            <h3> Total Revenue for All Orders: $<?php echo($totalValue);?></h3>
             
     </table>
     
-
+    
 </div>    
         
-<?php require(__DIR__ . "/../../partials/flash.php");?>
+<?php
+//note we need to go up 1 more directory
+require_once(__DIR__ . "/../../../partials/flash.php");
+require(__DIR__ . "/../../../partials/pagination.php"); 
+?>

@@ -167,7 +167,7 @@ body{
     <form method = "POST" action="checkout_page.php">
         <input type="hidden" name="total_cost" value="<?php echo($total)?>" />
         <input type="hidden" name="cart_id" value="<?php se($c, "id"); ?>" />
-        <input type="hidden" name="action" value="checkout" />
+        <input type="hidden" name="user_id_checkout" value="<?php se($item, "user_id"); ?>"/>
         <input class = "btn btn-success" type="submit" value="Checkout"  />
         
         </form>

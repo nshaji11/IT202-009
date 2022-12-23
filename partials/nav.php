@@ -35,6 +35,7 @@ session_start();
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php if (is_logged_in()) : ?>
@@ -62,7 +63,7 @@ session_start();
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
+                            Manage Products
                         </a>
                         <ul class="dropdown-menu bg-info" aria-labelledby="rolesDropdown">
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/add_item.php'); ?>">Create</a></li>
@@ -70,7 +71,38 @@ session_start();
                             <li><a class="dropdown-item" href="<?php echo get_url('admin/edit_item.php'); ?>">Edit Items</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop Owner Roles
+                        </a>
+                        <ul class="dropdown-menu bg-info"  aria-labelledby="rolesDropdown">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/order_history.php'); ?>">Admin Order History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/shop_page.php'); ?>">Shop Page</a></li>
+                        </ul>
+                    </li>
+                    
                 <?php endif; ?>
+                <?php if (has_role("Shop Owner")) : ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop Owner Roles
+                        </a>
+                        <ul class="dropdown-menu bg-info"  aria-labelledby="rolesDropdown">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/order_history.php'); ?>">Admin Order History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo get_url('admin/shop_page.php'); ?>">Shop Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Manage Products
+                        </a>
+                        <ul class="dropdown-menu bg-info" aria-labelledby="rolesDropdown">
+                            <li><a class="dropdown-item" href="<?php echo get_url('admin/add_item.php'); ?>">Create</a></li>
+                            <li><a class="dropdown-item" href="<?php echo get_url('admin/list_items.php'); ?>">List</a></li>
+                            <li><a class="dropdown-item" href="<?php echo get_url('admin/edit_item.php'); ?>">Edit Items</a></li>
+                        </ul>
+                    </li>
+                    <?php endif; ?>
                 <?php if (is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
                 <?php endif; ?>
